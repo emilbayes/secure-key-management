@@ -1,6 +1,6 @@
 {
   "name": "secure-key-management",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A collection of modules for securely working with cryptographic keys and secrets",
   "main": "index.js",
   "dependencies": {},
@@ -14,9 +14,7 @@
     "type": "git",
     "url": "git+https://github.com/emilbayes/secure-key-management.git"
   },
-  "keywords": [
-
-  ],
+  "keywords": [],
   "author": "Emil Bay <github@tixz.dk>",
   "license": "ISC",
   "bugs": {
