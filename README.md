@@ -35,15 +35,22 @@ WIP - A unified API will eventually surface, composed of the following modules:
 The modules in this suite use the Secure Buffers from
 [`sodium-native`](https://github.com/sodium-friends/sodium-native) extensively.
 Secure Buffers are a wrapper around `libsodium` secure memory, but with the same
-interface as normal Node.js `Buffer`s. Secure Buffers take more space than
-normal buffers, but with the benefit that overflows and underflows are detected
-and that data is destroyed when the memory is released. Secure memory is also
+interface as normal Node.js `Buffer`s.
+
+Secure Buffers take more space than normal buffers, but with the benefit that
+overflows and underflows are detected and that data is destroyed when the memory
+is released (eg. garbage collected in Node.js). Secure memory is also
 marked as not being swappable, meaning the OS will not write it to disk when
 swapping pages in and out of main memory, which could lead to accidental
 exposure. Secure memory is also masked in case of a core dump. Secure memory can
 also have memory protection applied, so you can control `noaccess`, `readonly`
 and `readwrite` state of the memory, crashing the process if these protections
 are broken.
+
+Be aware that even though it has the same API as normal `Buffer`s, only the read
+operations should be used, and that reading data out of the Buffer may break any
+security guarantees, except when passed to a function that can work directly
+with the underlying memory.
 
 ## Install
 
