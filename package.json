@@ -3,7 +3,11 @@
   "version": "0.0.1",
   "description": "A collection of modules for securely working with cryptographic keys and secrets",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "secure-create-key": "^1.0.1",
+    "secure-destroy-key": "^1.0.1",
+    "secure-read-key": "^1.0.1"
+  },
   "devDependencies": {
     "tape": "^4.8.0"
   },
